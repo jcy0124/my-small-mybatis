@@ -33,6 +33,9 @@ public class IpersistentTest {
 
         User getUser = sqlSession.selectOne("user.selectOne", user);
         System.out.println(getUser);
+
+        // 5, 释放资源
+        sqlSession.close();
     }
 }
 
