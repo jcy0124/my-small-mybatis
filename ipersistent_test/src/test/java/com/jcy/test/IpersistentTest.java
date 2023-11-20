@@ -1,6 +1,7 @@
 package com.jcy.test;
 
 import com.jcy.io.Resources;
+import com.jcy.pojo.User;
 import com.jcy.sqlSession.SqlSession;
 import com.jcy.sqlSession.SqlSessionFactory;
 import com.jcy.sqlSession.SqlSessionFactoryBuilder;
@@ -25,5 +26,48 @@ public class IpersistentTest {
         // 3, 生产sqlSession 创建了执行器对象
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
+        // 4, 调用sqlSession方法
+        User user = new User();
+        user.setId(1);
+        user.setUsername("tom");
+
+        User getUser = sqlSession.selectOne("user.selectOne", user);
+        System.out.println(getUser);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
